@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "967224513446",
+    "project_id": "fir-bookmark-5253f",
+    "storage_bucket": "fir-bookmark-5253f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967224513446:android:40d9f3bd0e67e1e958f567",
+        "android_client_info": {
+          "package_name": "com.example.firebase_bookmark"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtpT3el41jkxYSk595LwSettLGisqC80s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
