@@ -11,6 +11,7 @@ class AddPage extends StatefulWidget {
 class _AddPageState extends State<AddPage> {
   String first = '';
   String last = '';
+  int born = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,14 @@ class _AddPageState extends State<AddPage> {
               last = text;
             },
           ),
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Born',
+            ),
+            onChanged: (text) {
+              born = int.parse(text);
+            },
+          ),
           ElevatedButton(
             onPressed: () async {
               await _addToFirebase();
@@ -53,7 +62,7 @@ class _AddPageState extends State<AddPage> {
     final user = <String, dynamic>{
       "first": first,
       "last": last,
-      "born": 1991,
+      "born": born,
     };
 
     await db.collection("users").add(user);

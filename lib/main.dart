@@ -106,9 +106,34 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   onLongPress: () async {
-                    final db = FirebaseFirestore.instance;
-                    await db.collection("users").doc(user.id).delete();
-                    _fethcFirebaseData();
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text('削除しますか？'),
+                          actions: <Widget>[
+                            TextButton(
+                              child: Text('いいえ'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            TextButton(
+                              child: Text('はい'),
+                              onPressed: () async {
+                                final db = FirebaseFirestore.instance;
+                                await db
+                                    .collection("users")
+                                    .doc(user.id)
+                                    .delete();
+                                _fethcFirebaseData();
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
                 ))
             .toList(),
